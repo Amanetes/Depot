@@ -11,6 +11,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
     get products_url
     assert_response :success
+    assert_select 'h1', @product.title
   end
 
   test 'should get new' do
