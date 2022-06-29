@@ -10,7 +10,7 @@
           <%= line_item.product.title %>
         </td>
         <td class="text-right font-bold">
-          <%= number_to_currency(line_item.total_price) %>
+          <%= number_to_currency(line_item.total_price) if line_item.present?%>
         </td>
       </tr>
     <% end %>

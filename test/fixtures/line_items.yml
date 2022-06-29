@@ -3,7 +3,11 @@
 one:
   product: two
   cart: one
+  price:
+    <%= Faker::Number.decimal(l_digits: 2) %>
 
 two:
   product: two
   cart: two
+  price:
+    <%= Faker::Number.decimal(l_digits: 2) %>

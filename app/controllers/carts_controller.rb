@@ -10,7 +10,10 @@ class CartsController < ApplicationController
   end
 
   # GET /carts/1 or /carts/1.json
-  def show; end
+  def show
+    # Redirect_to store_index_url unless session[:cart_id] == @cart.id
+    # Если корзина из сессии не совпадает с корзиной, к которой хотим получить доступ
+  end
 
   # GET /carts/new
   def new

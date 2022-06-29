@@ -4,14 +4,14 @@
 one:
   title: Book Title Version 1
   description: MyText
-  image_url: lorem.jpg
   price: 9.99
+  image_url: lorem.jpg
 
 two:
   title: Book Title Version 2
   description: MyText
-  image_url: lorem.jpg
   price: 9.99
+  image_url: lorem.jpg
 
 ruby:
   title: Programming Ruby 1.9
@@ -21,3 +21,17 @@ ruby:
     delivered fast, you should add Ruby to your toolbox.
   price: 49.50
   image_url: ruby.jpg
+
+rails:
+  title: <%= Faker::Book.title %>
+  description: <%= Faker::Lorem.sentence %>
+  price:
+    <%= Faker::Number.decimal(l_digits: 2) %>
+  image_url: lorem.jpg
+
+lorem:
+  title: <%= Faker::Book.title %>
+  description: <%= Faker::Lorem.sentence %>
+  price:
+    <%= Faker::Number.decimal(l_digits: 2) %>
+  image_url: lorem.jpg
