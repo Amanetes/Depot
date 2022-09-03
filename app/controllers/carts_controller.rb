@@ -2,12 +2,14 @@
 
 class CartsController < ApplicationController
   before_action :set_cart, only: %i[show edit update destroy]
-
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   def index
     @carts = Cart.all
   end
 
-  def show; end
+  def show
+    # redirect_to store_index_url, notice: "You aren't permitted to see this cart" unless session[:cart_id] == @cart.id
+  end
 
   def new
     @cart = Cart.new
@@ -42,15 +44,21 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart.destroy
+    @cart.destroy if @cart.id == session[:cart_id]
+    session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Cart was successfully destroyed.' }
+      format.html { redirect_to store_index_url, notice: 'Your cart is currently empty' }
       format.json { head :no_content }
     end
   end
 
   private
+
+  def invalid_cart
+    logger.error "Attempt to access invalid cart #{params[:id]}"
+    redirect_to store_index_url, notice: 'Invalid cart'
+  end
 
   def set_cart
     @cart = Cart.find(params[:id])
