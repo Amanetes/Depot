@@ -1,0 +1,54 @@
+ru:
+  number:
+    currency:
+      format:
+        unit: "$US"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%n&nbsp;%u"
+  thanks: Спасибо за заказ
+  errors:
+    template:
+      body: "Возникли следующие ошибки:"
+      header: "1 ошибка не позволяет сохранить %{model}"
+      other: "%{count} ошибок не позволяют сохранить %{model}"
+  orders:
+    new:
+      legend: Введите информацию
+    form:
+      name: Имя
+      address_html: Адрес
+      email: Почта
+      pay_type: Способ оплаты
+      pay_prompt_html: Выберите способ оплаты
+      submit: Заказать
+      pay_types:
+        "Check": "Чек"
+        "Credit card": "Кредитная карта"
+        "Purchase order": "Заявка на покупку"
+    check:
+      routing_number: "БИК #"
+      account_number: "Номер счета #"
+    cc:
+      cc_number: "Номер карты #"
+      expiration_date: Срок действия
+    po:
+      po_number: "Номер заказа #"
+  layouts:
+    application:
+      title: Библиотека Прагматика
+      home: Главная
+      questions: Вопросы
+      news: Новости
+      contact: Контакты
+  store:
+    index:
+      title_html: Ваш прагматичный каталог
+    product:
+      add_html: Добавить в корзину
+  carts:
+    cart:
+      title: Корзина
+      empty: Очистить корзину
+      checkout: Оформить заказ

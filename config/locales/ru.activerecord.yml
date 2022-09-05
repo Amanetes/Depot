@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    models:
+      order: заказ
+    errors:
+      messages:
+        inclusion: Отсутствует в списке
+        blank: не может быть пустым
