@@ -4,6 +4,7 @@ class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: %i[create] # из CurrentCart concern
   before_action :set_line_item, only: %i[show edit update destroy]
+  skip_before_action :authorize, only: %i[create]
   after_action :reset_counter, only: %i[create]
 
   def index
