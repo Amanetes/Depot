@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
-
+  # START_HIGHLIGHT
+  resources :support_requests, only: %i[index update]
+  # END_HIGHLIGHT
   resources :users
   resources :products do
     get :who_bought, on: :member
