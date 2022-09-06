@@ -38,3 +38,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'pg', '~> 1.4', group: :production
